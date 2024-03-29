@@ -6,6 +6,8 @@ import userRoute from './user.route.js';
 import categoryRoute from './category.route.js'
 import leveRoute from './level.route.js'
 import quizTypeRoute from './quiz_type.route.js'
+import skinRoute from './skin.route.js'
+
 const router = Router();
 
 const specDoc = swaggerJsdoc(swaggerConfig);
@@ -17,5 +19,6 @@ router.use('/user', userRoute);
 router.use('/setting/level', leveRoute);
 router.use('/setting/quiz-type', quizTypeRoute);
 router.use('/setting/category', categoryRoute);
+router.use('/setting/skin', skinRoute);
 
 export default router;
