@@ -1,7 +1,7 @@
 import { message } from 'antd';
 import {Level} from "../../../models/index.js"
 
-exports.create = async (req, res) => {
+const create = async (req, res) => {
   try {
     const data = req.body
     const newDoc = new Level({
@@ -21,7 +21,7 @@ exports.create = async (req, res) => {
   }
 }
 
-exports.list = async (req, res) => {
+const list = async (req, res) => {
   try {
     const result = await Level.find({
       delFlag : false
@@ -39,7 +39,7 @@ exports.list = async (req, res) => {
   }
 }
 
-exports.listOne = async (req, res) => {
+const listOne = async (req, res) => {
   try {
     const {id} = req.query
     const result = await Level.findOne({
@@ -59,7 +59,7 @@ exports.listOne = async (req, res) => {
   }
 }
 
-exports.update = async (req, res) => {
+const update = async (req, res) => {
   try {
     const data = req.body;
     const {id} = data
@@ -84,7 +84,7 @@ exports.update = async (req, res) => {
   }
 }
 
-exports.remove = async (req, res) => {
+const remove = async (req, res) => {
   try {
     const {id} = req.query
     const removedResult = await Level.updateOne(id, {
@@ -110,7 +110,7 @@ exports.remove = async (req, res) => {
   }
 }
 
-exports.delete = async (req, res) => {
+const deleteItem = async (req, res) => {
   try {
     const {id} = req.query
     const deletedResult = await Level.deleteOne(id)
@@ -133,3 +133,12 @@ exports.delete = async (req, res) => {
     })
   }
 }
+
+export default {
+  create,
+  update,
+  deleteItem,
+  remove,
+  list,
+  listOne
+} 
