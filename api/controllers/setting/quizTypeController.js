@@ -1,4 +1,3 @@
-import { message } from 'antd';
 import {QuizType} from "../../../models/index.js"
 
 const create = async (req, res) => {
@@ -132,4 +131,13 @@ const deleteOne = async (req, res) => {
       message : err.message
     })
   }
+}
+
+export default {
+  create,
+  update,
+  list,
+  listOne,
+  deleteOne,
+  remove
 }
