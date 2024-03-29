@@ -26,6 +26,10 @@ const skinSchema = new Schema(
       type: Array,
       required: true,
     },
+    delFlag : {
+      type : Boolean,
+      default : false
+    }
   },
   {
     timestamps: true,
