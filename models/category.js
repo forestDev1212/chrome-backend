@@ -8,10 +8,13 @@ const categorySchema = new Schema(
       required: true,
       unique: true,
     },
-    delFlag : {
-      type : Boolean,
-      default : false
-    }
+    description: {
+      type: String,
+    },
+    delFlag: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
@@ -20,5 +23,3 @@ const categorySchema = new Schema(
 
 const Category = model("Category", categorySchema);
 export default Category;
-
-

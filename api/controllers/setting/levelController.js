@@ -33,7 +33,7 @@ const list = async (req, res) => {
     console.log("Error :", err.message);
     res.json({
       success : false,
-      message : err.message
+      message : err.message,
     })
   }
 }
