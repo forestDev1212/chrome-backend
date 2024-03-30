@@ -8,10 +8,13 @@ const levelSchema = new Schema(
       required: true,
       unique: true,
     },
-    delFlag : {
-      type : Boolean,
-      default : false
-    }
+    description: {
+      type: String,
+    },
+    delFlag: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
@@ -20,5 +23,3 @@ const levelSchema = new Schema(
 
 const Level = model("Level", levelSchema);
 export default Level;
-
-
