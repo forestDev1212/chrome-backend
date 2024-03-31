@@ -61,7 +61,7 @@ const listOne = async (req, res) => {
 const update = async (req, res) => {
   try {
     const data = req.body;
-    const {id} = data
+    const {id : _id} = data
     const updateResult = await Level.findByIdAndUpdate(id, data);
     if(!updateResult) {
       return res.status(404).json({
@@ -86,7 +86,7 @@ const update = async (req, res) => {
 const remove = async (req, res) => {
   try {
     const {id} = req.query
-    const removedResult = await Level.updateOne(id, {
+    const removedResult = await Level.findByIdAndUpdate(id, {
       delFlag : true
     })
     if(!removedResult) {
