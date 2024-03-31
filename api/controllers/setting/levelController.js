@@ -61,7 +61,7 @@ const listOne = async (req, res) => {
 const update = async (req, res) => {
   try {
     const data = req.body;
-    const {id : _id} = data
+    const {_id : id} = data
     const updateResult = await Level.findByIdAndUpdate(id, data);
     if(!updateResult) {
       return res.status(404).json({
