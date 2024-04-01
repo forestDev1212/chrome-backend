@@ -61,7 +61,7 @@ const listOne = async (req, res) => {
 const update = async (req, res) => {
   try {
     const data = req.body;
-    const { _id : id } = data;
+    const { _id: id } = data;
     const updateResult = await Skin.findByIdAndUpdate(id, data);
     if (!updateResult) {
       return res.status(404).json({
@@ -160,6 +160,25 @@ const applyNewSkin = async (req, res) => {
   }
 };
 
+const getCurrentAppliedSkin = async (req, res) => {
+  try {
+    const result = await Skin.findOne({
+      delFlag: false,
+      applied: true,
+    });
+    res.status(200).json({
+      success: true,
+      data: result,
+    });
+  } catch (err) {
+    console.log("Error :", err.message);
+    res.json({
+      success: false,
+      message: err.message,
+    });
+  }
+};
+
 export default {
   create,
   update,
@@ -168,4 +187,5 @@ export default {
   deleteOne,
   remove,
   applyNewSkin,
+  getCurrentAppliedSkin,
 };
