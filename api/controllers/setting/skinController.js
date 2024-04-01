@@ -167,4 +167,5 @@ export default {
   listOne,
   deleteOne,
   remove,
+  applyNewSkin,
 };

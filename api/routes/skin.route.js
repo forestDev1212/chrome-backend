@@ -5,4 +5,5 @@ router.post('/', skinController.create)
       .put('/', skinController.update)
       .get('/', skinController.list)
       .delete('/', skinController.remove)
+      .get('/apply_new_skin', skinController.applyNewSkin)
 export default router
