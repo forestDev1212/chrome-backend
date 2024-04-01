@@ -26,10 +26,16 @@ const skinSchema = new Schema(
       type: Array,
       required: true,
     },
-    delFlag : {
-      type : Boolean,
-      default : false
-    }
+    appliedQuizTypes: {
+      type: Array,
+    },
+    allowedQuizTypes: {
+      type: Array,
+    },
+    delFlag: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,

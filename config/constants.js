@@ -1,92 +1,102 @@
 export const skin = [
   {
-    categories: ["cate1", "cate2"],
+    categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
       "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
     title: "SKIN 1",
     applied: true,
+    appliedQuizTypes : [],
     allowedQuizTypes: ["Text", "TextAndImages", "Audio", "TextAndAudio"],
   },
   {
-    categories: ["cate1", "cate2"],
+    categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
       "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
     title: "SKIN 2",
     applied: false,
+    appliedQuizTypes : ["Text"],
     allowedQuizTypes: ["Text", "TextAndImages", "Audio", "TextAndAudio"],
   },
   {
-    categories: ["cate1", "cate2"],
+    categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
       "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
     title: "SKIN 3",
     applied: false,
+    appliedQuizTypes : ["Text"],
     allowedQuizTypes: ["Text", "TextAndImages", "Audio", "TextAndAudio"],
   },
   {
-    categories: ["cate1", "cate2"],
+    categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
       "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
     title: "SKIN 4",
     applied: false,
+    appliedQuizTypes : ["Text"],
     allowedQuizTypes: ["Text", "TextAndImages", "Audio", "TextAndAudio"],
   },
   {
-    categories: ["cate1", "cate2"],
+    categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
       "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
     title: "SKIN 5",
     applied: false,
+    appliedQuizTypes : ["Text"],
     allowedQuizTypes: ["Text", "TextAndImages", "Audio", "TextAndAudio"],
   },
   {
-    categories: ["cate1", "cate2"],
+    categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
       "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
     title: "SKIN 6",
     applied: false,
+    appliedQuizTypes : ["Text"],
     allowedQuizTypes: ["Text", "TextAndImages", "Audio", "TextAndAudio"],
   },
   {
-    categories: ["cate1", "cate2"],
+    categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
       "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
     title: "SKIN 7",
     applied: false,
+    appliedQuizTypes : ["Text"],
     allowedQuizTypes: ["Text", "TextAndImages", "Audio", "TextAndAudio"],
   },
   {
-    categories: ["cate1", "cate2"],
+    categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
       "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
     title: "SKIN 8",
     applied: false,
+    appliedQuizTypes : ["Text"],
     allowedQuizTypes: ["Text", "TextAndImages", "Audio", "TextAndAudio"],
   },
   {
-    categories: ["cate1", "cate2"],
+    categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
       "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
     title: "SKIN 9",
     applied: false,
+    appliedQuizTypes : ["Text"],
     allowedQuizTypes: ["Text", "TextAndImages", "Audio", "TextAndAudio"],
   },
   {
-    categories: ["cate1", "cate2"],
+    categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
       "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
     title: "SKIN 10",
     applied: false,
+    appliedQuizTypes : ["Text"],
     allowedQuizTypes: ["Text", "TextAndImages", "Audio", "TextAndAudio"],
   },
 ];
