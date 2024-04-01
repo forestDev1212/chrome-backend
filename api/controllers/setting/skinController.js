@@ -61,7 +61,7 @@ const listOne = async (req, res) => {
 const update = async (req, res) => {
   try {
     const data = req.body;
-    const { id } = data;
+    const { _id : id } = data;
     const updateResult = await Skin.findByIdAndUpdate(id, data);
     if (!updateResult) {
       return res.status(404).json({
@@ -133,7 +133,7 @@ const deleteOne = async (req, res) => {
   }
 };
 
-const applyNewSkin = async () => {
+const applyNewSkin = async (req, res) => {
   try {
     const { id } = req.query;
     // Update documents where applied is true
@@ -141,10 +141,10 @@ const applyNewSkin = async () => {
       { applied: true },
       { applied: false }
     );
-    if (!removeResults) {
+    if (removeResults) {
       console.log(` documents updated`);
       const updateResult = await Skin.findByIdAndUpdate(id, { applied: true });
-      if (!updateResult) {
+      if (updateResult) {
         res.status(200).json({
           success: true,
           message: "Successfully deleted.",
