@@ -1,5 +1,4 @@
 import {Category} from "../../../models/index.js"
-
 const create = async (req, res) => {
   try {
     const data = req.body
@@ -33,7 +32,7 @@ const list = async (req, res) => {
     console.log("Error :", err.message);
     res.json({
       success : false,
-      message : err.message
+      message : err.message,
     })
   }
 }
@@ -61,7 +60,7 @@ const listOne = async (req, res) => {
 const update = async (req, res) => {
   try {
     const data = req.body;
-    const {id} = data
+    const {_id : id} = data
     const updateResult = await Category.findByIdAndUpdate(id, data);
     if(!updateResult) {
       return res.status(404).json({
@@ -86,7 +85,7 @@ const update = async (req, res) => {
 const remove = async (req, res) => {
   try {
     const {id} = req.query
-    const removedResult = await Category.updateOne(id, {
+    const removedResult = await Category.findByIdAndUpdate(id, {
       delFlag : true
     })
     if(!removedResult) {
@@ -109,7 +108,7 @@ const remove = async (req, res) => {
   }
 }
 
-const deleteOne = async (req, res) => {
+const deleteItem = async (req, res) => {
   try {
     const {id} = req.query
     const deletedResult = await Category.deleteOne(id)
@@ -136,8 +135,8 @@ const deleteOne = async (req, res) => {
 export default {
   create,
   update,
-  list,
-  listOne,
+  deleteItem,
   remove,
-  deleteOne
-}
+  list,
+  listOne
+} 
