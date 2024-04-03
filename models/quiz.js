@@ -4,42 +4,45 @@ const { Schema, model } = mongoose;
 
 const quizSchema = new Schema(
   {
-    quizType : {
-      type : String,
-      required : true,
+    quizType: {
+      type: String,
+      required: true,
     },
-    category : {
-      type : Schema.Types.ObjectId,
-      ref : "Category",
-      required : true,
+    category: {
+      type: Schema.Types.ObjectId,
+      ref: "Category",
+      required: true,
     },
-    level : {
-      type : Schema.Types.ObjectId,
-      ref : "User",
-      required : true,
+    level: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
-    questionText : {
-      type : String
+    questionText: {
+      type: String,
     },
-    answerTexts : [{
-      type : String
-    }],
-    correctAnswerText : {
-      type : String
-    },
-    questionAudio : {
-      type : Schema.Types.ObjectId,
-    },
-    answerAudios : [
+    answerTexts: [
       {
-      type : Schema.Types.ObjectId,
-    }
+        type: String,
+      },
     ],
-    correctAnswerAudio : {
-      type : String
+    correctAnswerText: {
+      type: String,
     },
-
-
+    questionAudio: {
+      type: Schema.Types.ObjectId,
+    },
+    answerAudios: [
+      {
+        type: Schema.Types.ObjectId,
+      },
+    ],
+    correctAnswerAudio: {
+      type: String,
+    },
+    delFlag: {
+      type: Boolean,
+    },
   },
   {
     timestamps: true,
@@ -48,5 +51,3 @@ const quizSchema = new Schema(
 
 const Quiz = model("Quiz", quizSchema);
 export default Quiz;
-
-
