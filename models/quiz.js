@@ -42,6 +42,7 @@ const quizSchema = new Schema(
     },
     delFlag: {
       type: Boolean,
+      default: false,
     },
   },
   {

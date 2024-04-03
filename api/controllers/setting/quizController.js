@@ -61,7 +61,7 @@ const listOne = async (req, res) => {
 const listForQuizType = async (req, res) => {
   try {
     const {level, category, quizType} = req.query
-    const result = await Quiz.findOne({
+    const result = await Quiz.find({
       delFlag : false,
       level,
       category,
