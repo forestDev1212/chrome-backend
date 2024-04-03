@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { changePassword, deleteUser, editUser, forgotPassword, getUser, login, logout, refreshToken, register, sendVerificationCode, verifyEmail } from '../controllers/user/index.js';
 import { auth, imageUpload } from '../middlewares/index.js';
 import skinController from '../controllers/setting/skinController.js';
+import quizController from '../controllers/setting/quizController.js'
 
 const router = Router();
 
@@ -9,6 +10,8 @@ const router = Router();
 router.post('/', register);
 router.post('/login', login);
 router.get('/skin', skinController.getCurrentAppliedSkin);
+router.get('/skin', skinController.getCurrentAppliedSkin);
+router.get('/quizForUser', quizController.quizForUser);
 // router.post('/logout', auth, logout);
 // router.post('/verify-email', verifyEmail);
 // router.post('/refresh-token', refreshToken);

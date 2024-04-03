@@ -155,6 +155,26 @@ const deleteItem = async (req, res) => {
   }
 }
 
+const quizForUser = async (req, res) => {
+  try {
+    const {level, category, quizType} = req.query
+    const result =  await Quiz.aggregate([
+      { $match: { quizType, level, category } }, // Match documents that meet the specified criteria
+      { $sample: { size: 3 } } // Sample 10 random documents from the matched documents
+    ]);
+    res.status(200).json({
+      success : true,
+      data : result
+    })
+  } catch (err) {
+    console.log("Error :", err.message);
+    res.json({
+      success : false,
+      message : err.message,
+    })
+  }
+}
+
 export default {
   create,
   update,
@@ -163,4 +183,5 @@ export default {
   list,
   listOne,
   listForQuizType,
+  quizForUser,
 } 
