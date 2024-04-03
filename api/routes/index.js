@@ -7,6 +7,7 @@ import categoryRoute from './category.route.js'
 import leveRoute from './level.route.js'
 import quizTypeRoute from './quiz_type.route.js'
 import skinRoute from './skin.route.js'
+import quizRoute from './quiz.route.js'
 
 const router = Router();
 
@@ -20,5 +21,6 @@ router.use('/setting/level', leveRoute);
 router.use('/setting/quiz-type', quizTypeRoute);
 router.use('/setting/category', categoryRoute);
 router.use('/setting/skin', skinRoute);
+router.use('/setting/quiz', quizRoute);
 
 export default router;
