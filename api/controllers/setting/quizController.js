@@ -161,36 +161,38 @@ const quizForUser = async (req, res) => {
     const { level, category, quizType } = req.query;
 
     const randomQuizzes = await Quiz.aggregate([
-      { $match: { 
+      {
+        $match: {
           level: mongoose.Types.ObjectId(level), // Match level ID
           category: mongoose.Types.ObjectId(category), // Match category ID
-          quizType: quizType // Match quizType
-      } },
-      { $sample: { size: 3 } }
+          quizType: quizType, // Match quizType
+        },
+      },
+      { $sample: { size: 3 } },
     ]);
-    
+
     // Array to store modified quizzes
     const modifiedQuizzes = [];
-    
+
     // Loop through each random quiz
     for (const quiz of randomQuizzes) {
       // Randomly select three incorrect answers from the current quiz
       const incorrectAnswers = quiz.answerTexts
-        .filter(answer => answer !== quiz.correctAnswerText) // Exclude the correct answer
+        .filter((answer) => answer !== quiz.correctAnswerText) // Exclude the correct answer
         .sort(() => 0.5 - Math.random()) // Shuffle the answers
         .slice(0, 3); // Select the first three incorrect answers
-    
+
       // Replace one incorrect answer with the correct answer
       const randomIndex = Math.floor(Math.random() * 4);
       incorrectAnswers.splice(randomIndex, 0, quiz.correctAnswerText);
-    
+
       // Add modified quiz to the array
       modifiedQuizzes.push({
-        _id : quiz._id,
+        _id: quiz._id,
         questionText: quiz.questionText,
-        answers: incorrectAnswers
+        answers: incorrectAnswers,
       });
-  }
+    }
 
     res.status(200).json({
       success: true,
@@ -207,22 +209,21 @@ const quizForUser = async (req, res) => {
 
 const checkAnswer = async (req, res) => {
   try {
-    const {_id, answer} = req.body
+    const { _id, answer } = req.body;
     const result = await Quiz.findOne({
       _id,
-      correctAnswerText,
-      delFlag: false
-    })
-    if(result) {
-
+      correctAnswerText: answer,
+      delFlag: false,
+    });
+    if (result) {
       res.status(200).json({
         success: true,
-        correct : true
+        correct: true,
       });
     } else {
       res.status(200).json({
         success: true,
-        correct : false
+        correct: false,
       });
     }
   } catch (err) {
@@ -232,7 +233,7 @@ const checkAnswer = async (req, res) => {
       message: err.message,
     });
   }
-}
+};
 
 export default {
   create,
