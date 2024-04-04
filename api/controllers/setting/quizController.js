@@ -186,6 +186,7 @@ const quizForUser = async (req, res) => {
     
       // Add modified quiz to the array
       modifiedQuizzes.push({
+        _id : quiz._id,
         questionText: quiz.questionText,
         answers: incorrectAnswers
       });
@@ -204,6 +205,22 @@ const quizForUser = async (req, res) => {
   }
 };
 
+const checkAnswer = (req, res) => {
+  try {
+    const {_id, answer} = req.body
+    res.status(200).json({
+      success: true,
+      // data: modifiedQuizzes,
+    });
+  } catch (err) {
+    console.log("Error :", err.message);
+    res.json({
+      success: false,
+      message: err.message,
+    });
+  }
+}
+
 export default {
   create,
   update,
@@ -213,4 +230,5 @@ export default {
   listOne,
   listForQuizType,
   quizForUser,
+  checkAnswer,
 };
