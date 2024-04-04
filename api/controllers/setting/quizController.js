@@ -205,13 +205,26 @@ const quizForUser = async (req, res) => {
   }
 };
 
-const checkAnswer = (req, res) => {
+const checkAnswer = async (req, res) => {
   try {
     const {_id, answer} = req.body
-    res.status(200).json({
-      success: true,
-      // data: modifiedQuizzes,
-    });
+    const result = await Quiz.findOne({
+      _id,
+      correctAnswerText,
+      delFlag: false
+    })
+    if(result) {
+
+      res.status(200).json({
+        success: true,
+        correct : true
+      });
+    } else {
+      res.status(200).json({
+        success: true,
+        correct : false
+      });
+    }
   } catch (err) {
     console.log("Error :", err.message);
     res.json({

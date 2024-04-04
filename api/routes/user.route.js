@@ -12,7 +12,7 @@ router.post('/login', login);
 router.get('/skin', skinController.getCurrentAppliedSkin);
 router.get('/skin', skinController.getCurrentAppliedSkin);
 router.get('/quizForUser', quizController.quizForUser);
-router.get('/checkAnswer', quizController.checkAnswer);
+router.post('/checkAnswer', quizController.checkAnswer);
 // router.post('/logout', auth, logout);
 // router.post('/verify-email', verifyEmail);
 // router.post('/refresh-token', refreshToken);
