@@ -174,21 +174,15 @@ const quizForUser = async (req, res) => {
     
     // Loop through each random quiz
     for (const quiz of randomQuizzes) {
-      // Get all quizzes in the same category and level excluding the current quiz
-      const similarQuizzes = await Quiz.aggregate([
-        { $match: { 
-            level: mongoose.Types.ObjectId(level),
-            category: mongoose.Types.ObjectId(category),
-            _id: { $ne: quiz._id } // Exclude the current quiz
-        } },
-        { $sample: { size: 3 } }, // Sample 3 random quizzes
-        { $project: { _id: 0, correctAnswerText: 1 } } // Project only correct answers
-      ]);
+      // Randomly select three incorrect answers from the current quiz
+      const incorrectAnswers = quiz.answerTexts
+        .filter(answer => answer !== quiz.correctAnswerText) // Exclude the correct answer
+        .sort(() => 0.5 - Math.random()) // Shuffle the answers
+        .slice(0, 3); // Select the first three incorrect answers
     
       // Replace one incorrect answer with the correct answer
-      const incorrectAnswers = similarQuizzes.map(q => q.correctAnswerText); // Get correct answers from similar quizzes
-      const randomIndex = Math.floor(Math.random() * 4); // Randomly select an index
-      incorrectAnswers.splice(randomIndex, 0, quiz.correctAnswerText); // Insert correct answer at the random index
+      const randomIndex = Math.floor(Math.random() * 4);
+      incorrectAnswers.splice(randomIndex, 0, quiz.correctAnswerText);
     
       // Add modified quiz to the array
       modifiedQuizzes.push({
