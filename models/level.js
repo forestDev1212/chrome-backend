@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+// const { modelOption } = require("./config.js");
 const { Schema, model } = mongoose;
 
 const levelSchema = new Schema(
@@ -18,7 +19,7 @@ const levelSchema = new Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 const Level = model("Level", levelSchema);

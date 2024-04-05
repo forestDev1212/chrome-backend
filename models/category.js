@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+// const { modelOption } = require("./config.js");
 const { Schema, model } = mongoose;
 
 const categorySchema = new Schema(
@@ -18,7 +19,7 @@ const categorySchema = new Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 const Category = model("Category", categorySchema);
