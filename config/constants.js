@@ -3,7 +3,7 @@ export const skin = [
     categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
-      "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
+    "/assets/images/skin/game-skin-1.jpg",
     title: "SKIN 1",
     applied: true,
     appliedQuizTypes : [],
@@ -13,7 +13,7 @@ export const skin = [
     categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
-      "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
+      "/assets/images/skin/game-skin-2-audio-question-image-answer.jpg",
     title: "SKIN 2",
     applied: false,
     appliedQuizTypes : ["Text"],
@@ -23,7 +23,7 @@ export const skin = [
     categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
-      "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
+      "/assets/images/skin/game-skin-3.jpg",
     title: "SKIN 3",
     applied: false,
     appliedQuizTypes : ["Text"],
@@ -33,7 +33,7 @@ export const skin = [
     categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
-      "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
+      "/assets/images/skin/game-skin-4.jpg",
     title: "SKIN 4",
     applied: false,
     appliedQuizTypes : ["Text"],
@@ -43,7 +43,7 @@ export const skin = [
     categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
-      "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
+      "/assets/images/skin/game-skin-5.jpg",
     title: "SKIN 5",
     applied: false,
     appliedQuizTypes : ["Text"],
@@ -53,7 +53,7 @@ export const skin = [
     categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
-      "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
+      "/assets/images/skin/game-skin-6-audio-answer.jpg",
     title: "SKIN 6",
     applied: false,
     appliedQuizTypes : ["Text"],
@@ -63,7 +63,7 @@ export const skin = [
     categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
-      "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
+      "/assets/images/skin/game-skin-7.jpg",
     title: "SKIN 7",
     applied: false,
     appliedQuizTypes : ["Text"],
@@ -73,7 +73,7 @@ export const skin = [
     categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
-      "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
+      "/assets/images/skin/game-skin-1.jpg",
     title: "SKIN 8",
     applied: false,
     appliedQuizTypes : ["Text"],
@@ -83,7 +83,7 @@ export const skin = [
     categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
-      "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
+      "/assets/images/skin/game-skin-1.jpg",
     title: "SKIN 9",
     applied: false,
     appliedQuizTypes : ["Text"],
@@ -93,7 +93,7 @@ export const skin = [
     categories: [],
     quizTypes: ["Text", "TextAndImages"],
     demoImageSrc:
-      "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
+      "/assets/images/skin/game-skin-1.jpg",
     title: "SKIN 10",
     applied: false,
     appliedQuizTypes : ["Text"],

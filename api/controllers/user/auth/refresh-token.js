@@ -6,9 +6,10 @@ import pkg from 'jsonwebtoken';
 const { verify } = pkg;
 
 export default async (req, res) => {
-  const { error } = validateRefreshToken(req.body);
-  if (error) return res.status(400).json(errorHelper('00059', req, error.details[0].message));
+  // const { error } = validateRefreshToken(req.body);
+  // if (error) return res.status(400).json(errorHelper('00059', req, error.details[0].message));
 
+  
   try {
     req.user = verify(req.body.refreshToken, refreshTokenSecretKey)
   } catch (err) {

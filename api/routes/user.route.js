@@ -15,7 +15,7 @@ router.get('/quizForUser', quizController.quizForUser);
 router.post('/checkAnswer', quizController.checkAnswer);
 // router.post('/logout', auth, logout);
 // router.post('/verify-email', verifyEmail);
-// router.post('/refresh-token', refreshToken);
+router.post('/refresh-token', refreshToken);
 // router.post('/forgot-password', auth, forgotPassword);
 // router.post('/send-verification-code', sendVerificationCode);
 
