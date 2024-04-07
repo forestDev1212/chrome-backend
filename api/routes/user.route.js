@@ -3,6 +3,7 @@ import { changePassword, deleteUser, editUser, forgotPassword, getUser, login, l
 import { auth, imageUpload } from '../middlewares/index.js';
 import skinController from '../controllers/setting/skinController.js';
 import quizController from '../controllers/setting/quizController.js'
+import authController from '../controllers/user/auth/authController.js'
 
 const router = Router();
 
@@ -15,7 +16,7 @@ router.get('/quizForUser', quizController.quizForUser);
 router.post('/checkAnswer', quizController.checkAnswer);
 // router.post('/logout', auth, logout);
 // router.post('/verify-email', verifyEmail);
-router.post('/refresh-token', refreshToken);
+router.post('/update-account', authController.updateAccount);
 // router.post('/forgot-password', auth, forgotPassword);
 // router.post('/send-verification-code', sendVerificationCode);
 

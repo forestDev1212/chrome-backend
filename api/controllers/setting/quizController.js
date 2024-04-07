@@ -191,6 +191,7 @@ const quizForUser = async (req, res) => {
         _id: quiz._id,
         questionText: quiz.questionText,
         answers: incorrectAnswers,
+        quizType: quiz.quizType,
       });
     }
 
